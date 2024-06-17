@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        
+        {
+            "type": "chrome",
+            "name": "http://trashButton",
+            "request": "launch",
+            "url": "http://trashButton"
+        }
+    ]
+}
