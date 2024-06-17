@@ -46,7 +46,6 @@ function deleteCheck(e) {
         const todo = item.parentElement;
         //Animation
         todo.classList.add("fall");
-        remove.localTodos(todo)
         todo.addEventListener('transitionend', function(){
             todo.remove();
         });
@@ -138,6 +137,7 @@ function getTodos() {
     todo.splice(tods.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
     }
+    //REMOVES PEREVIOUS TODO FROM LOCAL STORAGE
 function resetStorage(){
     localStorage.removeItem("todos");
     location.reload();
