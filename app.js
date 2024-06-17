@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", getTodos)
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
+reset.addEventListener("click", resetStorage);
 //Functions
 function addTodo(event){
     //Prevent submission
@@ -133,9 +134,11 @@ function getTodos() {
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
-    todos.push(todo);
+    const todoIndex = todo.children[0].innerText;
+    todo.splice(tods.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
     }
-    console.log(todo.children[0].innerText);
-    copnnsle.splice(tods.indexOf(todoIndex), 1);
-
+function resetStorage(){
+    localStorage.removeItem("todos");
+    location.reload();
+}
